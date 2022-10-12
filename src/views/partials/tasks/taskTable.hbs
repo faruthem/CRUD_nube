@@ -1,4 +1,5 @@
-<table>
+{{#if tasks}}
+<table class="table table-bordered table-hover">
     <thead>
         <tr>
             <th>N.</th>
@@ -15,17 +16,23 @@
             <td>{{description}}</td> 
             <td>
                 {{#if done}}
-                    <a href="/taggdone/{{_id}}">Realizada</a>
+                    <a href="/taggdone/{{_id}}" class="btn btn-success">Realizada</a>
                 {{else}}
-                    <a href="/taggdone/{{_id}}">Pendiente</a>
+                    <a href="/taggdone/{{_id}}" class="btn btn-warning">Pendiente</a>
                 {{/if}}
 
                             
-                <a href="/edit/{{_id}}">Editar</a>
-                <a href="/delete/{{_id}}">Eliminar</a>
+                <a href="/edit/{{_id}}" class="btn btn-info">Editar</a>
+                <a href="/delete/{{_id}}" class="btn btn-danger">Eliminar</a>
                 
             </td>           
         </tr>  
+        
     {{/each}}
     </tbody>
 </table>
+{{else}}
+        <div>
+            <h1 class="text-center">No hay tareas asignadas</h1>
+        </div>
+{{/if}}
