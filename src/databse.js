@@ -1,9 +1,11 @@
 import { connect } from "mongoose";
+import {MONGODB_URI} from'./config';
+
+
+
 (async()=>{
     try {
-        const db = await connect("mongodb+srv://usuario:clave@cluster0.2bbaoni.mongodb.net/crud")
-        //const db = await connect("mongodb://localhost/crud")
-        //const db = await connect("mongodb://mongo/crud")
+        const db = await connect(MONGODB_URI)
         console.log("BASE DE DATOS CONECTADA A", db.connection.name)
     } catch (error) {
         console.log(error);
