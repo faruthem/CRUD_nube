@@ -14,10 +14,16 @@
             <td>{{title}}</td>
             <td>{{description}}</td> 
             <td>
-                <button>echo</button>
-                <button>Editar</button>
+                {{#if done}}
+                    <a href="/taggdone/{{_id}}">Realizada</a>
+                {{else}}
+                    <a href="/taggdone/{{_id}}">Pendiente</a>
+                {{/if}}
+
+                            
                 <a href="/edit/{{_id}}">Editar</a>
-                <button>Eliminar</button>
+                <a href="/delete/{{_id}}">Eliminar</a>
+                
             </td>           
         </tr>  
     {{/each}}

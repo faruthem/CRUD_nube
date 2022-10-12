@@ -39,14 +39,32 @@ router.get("/edit/:id",async(req,res)=>{
     res.render("edit",{task});
 });
 
-router.post("/edit/:id",(req,res)=>{
-    console.log(req.body);
-    res.send('Cambio recibido');
+router.post("/edit/:id",async(req,res)=>{
+    const{id } = req.params
+
+    await Task.findByIdAndUpdate(id, req.body)
+
+    //console.log(req.body);
+    //res.send('Cambio recibido');
+    res.redirect('/');
 });
 
 
-router.get("/delete",(req,res)=>{
-    res.render("delete");
+router.get("/delete/:id",async(req,res)=>{
+    const { id } = req.params;
+    await Task.findByIdAndDelete(id)
+    //res.render("delete");
+    res.redirect('/');
 });
+
+router.get("/taggdone/:id",async(req,res)=>{
+    const{id } = req.params;
+    const task = await Task.findById(id)
+    task.done = !task.done;
+    await task.save();
+    res.redirect("/");
+
+});
+
 
 export default router;
