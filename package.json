@@ -1,13 +1,12 @@
 {
-  "name": "crud",
+  "name": "CRUD_nube",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/index.js --exec babel-node"
   },
   "keywords": [],
-  "author": "",
+  "author": "Hannia and Kevin",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.0.3",
@@ -22,5 +21,14 @@
     "@babel/node": "^7.19.1",
     "@babel/preset-env": "^7.19.3",
     "nodemon": "^2.0.20"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ugto/CRUD_nube.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ugto/CRUD_nube/issues"
+  },
+  "homepage": "https://github.com/ugto/CRUD_nube#readme",
+  "description": "CRUD"
 }

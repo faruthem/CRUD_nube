@@ -3,7 +3,7 @@ import Task from "../models/Task";
 export const renderTasks = async(req,res)=>{
     const tasks = await Task.find().lean();
     //console.log(tasks[0]);
-    res.render("Index",{tasks:tasks});
+    res.render("index",{tasks:tasks});
 }
 
 export const createTask =async(req,res)=>{
